@@ -7,7 +7,23 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 
 
+def fib1(n):
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a+b
+    return b
 
-t = time.time()
-print(fib(100))
-print(time.time() - t)
+
+def fib2(n):
+    if n in m.keys():
+        return m[n]
+    return fib2(n-1) + fib(n-2)
+
+
+
+
+m = {0: 0, 1: 1}
+for f in [fib, fib1, fib2]:
+    t = time.time()
+    print(f(40))
+    print(time.time() - t)
